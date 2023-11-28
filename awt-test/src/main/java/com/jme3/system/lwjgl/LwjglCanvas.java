@@ -202,12 +202,12 @@ public class LwjglCanvas  implements JmeContext {
 
     @Override
     public int getFramebufferHeight() {
-        return 200;
+        return canvas.getWidth();
     }
 
     @Override
     public int getFramebufferWidth() {
-        return 200;
+        return canvas.getHeight();
     }
 
     @Override
