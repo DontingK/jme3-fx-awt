@@ -1,6 +1,6 @@
 
 
-JME lwjgl3 render JavaFx or Awt/Swing
+JME lwjgl3 render to JavaFx or Awt/Swing
 
 Run javafx
 [JmeFxRun](fx-test%2Fsrc%2Fmain%2Fjava%2Fcom%2Fexample%2Ffxtest%2FJmeFxRun.java)
