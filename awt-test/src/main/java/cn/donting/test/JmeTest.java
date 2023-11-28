@@ -27,9 +27,9 @@ public class JmeTest extends SimpleApplication {
     public void simpleInitApp() {
         viewPort.setBackgroundColor(ColorRGBA.Black);
         flyCam.setDragToRotate(true);
+        flyCam.setMoveSpeed(5);
         // #1 创建一个方块形状的网格
         Mesh box = new Box(1, 1, 1);
-
         // #2 加载一个感光材质
         Material mat = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
         mat.setColor("Diffuse",ColorRGBA.Red);

@@ -30,7 +30,9 @@ import static org.lwjgl.opengl.GL.createCapabilities;
 import static org.lwjgl.opengl.GL11.*;
 
 public class LwjglCanvas  implements JmeContext {
+    protected static final String THREAD_NAME = "jME3 Main";
 
+    private Thread renderThread;
 
     private class LwjglAWTGLCanvas extends AWTGLCanvas{
 
@@ -42,14 +44,25 @@ public class LwjglCanvas  implements JmeContext {
         public void initGL() {
             initContent(true);
             glClearColor(0.3f, 0.4f, 0.5f, 1);
-            setAutoFlushFrames(true);
 
         }
 
         @Override
         public void paintGL() {
             runLoop();
+        }
 
+        @Override
+        public void addNotify() {
+            super.addNotify();
+            canvas.setFocusable(true);
+            canvas.setIgnoreRepaint(true);
+            renderThread = new Thread(() -> {
+                while (true){
+                    canvas.render();
+                }
+            }, THREAD_NAME);
+            renderThread.start();
         }
     }
 
@@ -173,6 +186,7 @@ public class LwjglCanvas  implements JmeContext {
 
     @Override
     public void create(boolean waitFor) {
+
     }
 
 
@@ -298,4 +312,6 @@ public class LwjglCanvas  implements JmeContext {
     public AWTGLCanvas getGlCanvas() {
         return canvas;
     }
+
+
 }

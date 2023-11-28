@@ -22,23 +22,30 @@ public class JmeAwtTest {
         data.samples = 4;
         JmeTest jmeTest = new JmeTest();
         jmeTest.start(JmeContext.Type.Canvas);
-
         com.jme3.system.lwjgl.LwjglCanvas context1 = (com.jme3.system.lwjgl.LwjglCanvas)jmeTest.getContext();
         AWTGLCanvas glCanvas = context1.getGlCanvas();
         frame.add(glCanvas);
         frame.setVisible(true);
         glCanvas.setSize(200,200);
-        Runnable renderLoop = new Runnable() {
-            @Override
-            public void run() {
-                if (!glCanvas.isValid()) {
-                    GL.setCapabilities(null);
-                    return;
-                }
-                glCanvas.render();
-                SwingUtilities.invokeLater(this);
-            }
-        };
-        SwingUtilities.invokeLater(renderLoop);
+//        Runnable renderLoop = new Runnable() {
+//            @Override
+//            public void run() {
+//                if (!glCanvas.isValid()) {
+//                    GL.setCapabilities(null);
+//                    return;
+//                }
+//                glCanvas.render();
+//                SwingUtilities.invokeLater(this);
+//            }
+//        };
+//        SwingUtilities.invokeLater(renderLoop);
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while (true){
+//                    glCanvas.render();
+//                }
+//            }
+//        }).start();
     }
 }
