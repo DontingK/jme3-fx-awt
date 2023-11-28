@@ -1,0 +1,5 @@
+rootProject.name = 'jme-fx-awt'
+
+include 'fx-test'
+include 'awt-test'
+
