@@ -5,7 +5,7 @@ import com.huskerdev.openglfx.canvas.GLCanvasAnimator;
 import com.huskerdev.openglfx.canvas.GLProfile;
 import com.huskerdev.openglfx.canvas.events.GLInitializeEvent;
 import com.huskerdev.openglfx.canvas.events.GLRenderEvent;
-import com.huskerdev.openglfx.lwjgl.LWJGLExecutor;
+import com.huskerdev.openglfx.lwjgl2.LWJGL2Executor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        GLCanvas glCanvas = GLCanvas.create(LWJGLExecutor.LWJGL_MODULE, GLProfile.Compatibility, true);
+        GLCanvas glCanvas =new GLCanvas(LWJGL2Executor.LWJGL2_MODULE, GLProfile.Compatibility, true);
         glCanvas.setAnimator(new GLCanvasAnimator());
         Scene scene = new Scene(glCanvas, 320, 240);
         glCanvas.setAnimator(new GLCanvasAnimator(144));

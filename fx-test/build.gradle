@@ -10,7 +10,7 @@ group 'com.example'
 version '1.0-SNAPSHOT'
 
 repositories {
-  maven { url "https://maven.aliyun.com/repository/public" }
+//  maven { url "https://maven.aliyun.com/repository/public" }
   maven {url "https://jitpack.io"}
   mavenCentral()
 }
@@ -37,14 +37,18 @@ javafx {
 
 dependencies {
 // https://mvnrepository.com/artifact/com.huskerdev/openglfx
-  implementation group: 'com.huskerdev', name: 'openglfx', version: '4.0.1'
+//  implementation group: 'com.huskerdev', name: 'openglfx', version: '4.0.5'
 // https://mvnrepository.com/artifact/com.huskerdev/openglfx-lwjgl
-  implementation group: 'com.huskerdev', name: 'openglfx-lwjgl', version: '4.0.1'
+//  implementation group: 'com.huskerdev', name: 'openglfx-lwjgl', version: '4.0.1'
+  implementation 'com.huskerdev:openglfx-lwjgl2:4.0.5'
+  // https://mvnrepository.com/artifact/com.huskerdev/openglfx
+  implementation 'com.huskerdev:openglfx:4.0.5'
+
 
 //    implementation "org.lwjgl:lwjgl-jawt:3.3.2"
 //    implementation 'org.lwjglx:lwjgl3-awt:0.1.8'
   implementation "${jmonkeyengineGroup}:jme3-core:${jmonkeyengineVersion}"
-  implementation "${jmonkeyengineGroup}:jme3-lwjgl3:${jmonkeyengineVersion}"
+  implementation "${jmonkeyengineGroup}:jme3-lwjgl:${jmonkeyengineVersion}"
   implementation "${jmonkeyengineGroup}:jme3-desktop:${jmonkeyengineVersion}"
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")

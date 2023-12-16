@@ -15,8 +15,8 @@ public class JmeTest extends SimpleApplication {
 
     public JmeTest() {
          settings = new AppSettings(true);
-        settings.setGammaCorrection(false);
-
+        settings.setGammaCorrection(true);
+        settings.setSamples(16);
     }
 
     /**

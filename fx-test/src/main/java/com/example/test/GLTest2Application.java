@@ -2,6 +2,7 @@ package com.example.test;
 
 import com.huskerdev.openglfx.canvas.GLCanvas;
 import com.jme3.system.JmeContext;
+import com.jme3.system.lwjgl.LwjglCanvas;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -14,7 +15,7 @@ public class GLTest2Application extends Application {
     public void start(Stage stage) throws IOException {
         JmeTest jmeTest = new JmeTest();
         jmeTest.start(JmeContext.Type.Canvas);
-        com.jme3.system.lwjgl.LwjglCanvas context1 = (com.jme3.system.lwjgl.LwjglCanvas)jmeTest.getContext();
+        LwjglCanvas context1 = (LwjglCanvas)jmeTest.getContext();
         GLCanvas glCanvas = context1.getGlCanvas();
 
 //        Pane pane = new Pane();
